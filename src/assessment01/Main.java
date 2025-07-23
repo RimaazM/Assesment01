@@ -4,19 +4,20 @@ import java.util.ArrayList;
 
 public class Main {
 
-    // A shared list to hold all appointments
+    // this list store all appointments created
     static ArrayList<Appointment> appointments = new ArrayList<>();
 
     public static void main(String[] args) {
-        // Creating Doctors
+        // Creating general practitioner objects
         GeneralPractitioner gp1 = new GeneralPractitioner(1, "Dr. Smith", "General Medicine", "Family Health");
         GeneralPractitioner gp2 = new GeneralPractitioner(2, "Dr. Green", "General Medicine", "Women's Health");
         GeneralPractitioner gp3 = new GeneralPractitioner(3, "Dr. Patel", "General Medicine", "Men's Health");
 
+        //creating dietitian object
         Dietitian d1 = new Dietitian(4, "Mr. Lee", "Nutrition", "Registered");
         Dietitian d2 = new Dietitian(5, "Ms. Maya", "Nutrition", "Accredited");
 
-        // Printing Doctor Details
+        // Printing Details for all Doctors
         gp1.printDetails();
         System.out.println("-------------------------");
         gp2.printDetails();
@@ -37,19 +38,20 @@ public class Main {
         System.out.println("All appointments created.");
         System.out.println("-------------------------");
 
-        // Displaying Appointments
+        // Displaying all current appointments
         printExistingAppointments();
         System.out.println("-------------------------");
 
-        // Cancel and re-check appointments
+        // cancel appointment by mobile number
         System.out.println("Cancel appointment for mobile 041274584");
         cancelAppointment("041274584");
 
+        //display updated appointment
         System.out.println("Updated appointments:");
         printExistingAppointments();
     }
 
-    // Create appointment and add to list
+    // method to create and add a new appointment to the list
     public static void createAppointment(String name, String mobile, String timeslot, HealthProfessional doctor) {
         if (name.isEmpty() || mobile.isEmpty() || timeslot.isEmpty() || doctor == null) {
             System.out.println("Missing info - cannot create appointment");
@@ -60,7 +62,7 @@ public class Main {
         appointments.add(appointment);
     }
 
-    // Display all appointments
+    // method to print all appointment
     public static void printExistingAppointments() {
         if (appointments.isEmpty()) {
             System.out.println("No appointments found.");
