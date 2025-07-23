@@ -31,10 +31,10 @@ public class Main {
 
         // Creating Appointments
         System.out.println("Creating appointments...");
-        createAppointment("Alice", "041274584", "10:00", gp1);
-        createAppointment("Bob", "04512548", "11:00", d1);
+        createAppointment("Alie", "041274584", "10:00", gp1);
+        createAppointment("Bobb", "04512548", "11:00", d1);
         createAppointment("Charlie", "0245569845", "14:20", gp2);
-        createAppointment("Diana", "0245589154", "15:45", d2);
+        createAppointment("Dina", "0245589154", "15:45", d2);
         System.out.println("All appointments created.");
         System.out.println("-------------------------");
 
@@ -58,8 +58,11 @@ public class Main {
             return;
         }
 
-        Appointment appointment = new Appointment(name, mobile, timeslot, doctor);
-        appointments.add(appointment);
+        bookable appointment = new Appointment(name, mobile, timeslot, doctor);
+        appointment.book();  // ✔ call book() on the object, not the list
+
+        appointments.add((Appointment) appointment);  // ✔ add to list
+
     }
 
     // method to print all appointment
