@@ -1,11 +1,12 @@
 package assessment01;
-
+// the appointment class represent a patients appointment with a health professional
 public class Appointment {
-    private String name;
-    private String mobile;
-    private String timeslot;
-    private HealthProfessional doctor;
+    private String name; //patient name
+    private String mobile; // patient mobile number
+    private String timeslot; // time slots which they have booked the appointment
+    private HealthProfessional doctor; // the doctor or dietitian assigned to the appointment
 
+    //constructor to create an appointment with the given details
     public Appointment(String name, String mobile, String timeslot, HealthProfessional doctor) {
         this.name = name;
         this.mobile = mobile;
@@ -13,10 +14,11 @@ public class Appointment {
         this.doctor = doctor;
     }
 
+
     public String getMobile() {
         return mobile;
     }
-
+    //print all details of the appointment in a readable format
     public void printAppointment() {
         System.out.println("Appointment for: " + name);
         System.out.println("Mobile: " + mobile);
